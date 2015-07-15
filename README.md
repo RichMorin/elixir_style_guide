@@ -56,19 +56,24 @@ end
 ```
 
 * Use Unix-style line endings (\*BSD/Solaris/Linux/OSX users are covered by
-  default, Windows users have to be extra careful).
+  default; Windows users have to be extra careful).
 
-    * If you're using Git you might want to add the following configuration
+    * If you're using Git, you might want to add the following configuration
       setting to protect your project from Windows line endings creeping in:
 
 ```bash
 $ git config --global core.autocrlf true
 ```
 
-* Use spaces around operators, after commas, colons and semicolons. Do not put
-  spaces around matched pairs like brackets, parentheses, etc. Whitespace might
-  be (mostly) irrelevant to the Elixir runtime, but its proper use is the key to
-  writing easily readable code.
+* Whitespace might be (mostly) irrelevant to the Elixir runtime,
+  but its proper use is the key to writing easily readable code.
+
+* Use spaces around operators and after commas, colons, and semicolons.
+
+* Do not put spaces around matched pairs like brackets, parentheses, etc.
+  (Some coders put spaces inside these, for readability.)
+
+* In-line spacing can be used to highlight parallel construction.
 
 ```elixir
 sum = 1 + 2
@@ -111,7 +116,7 @@ def some_function([first|rest]) do
 end
 ```
 
-* If you have more than one multi-line `def`s do not use single-line `def`s.
+* If you have more than one multi-line `def`, do not use single-line `def`s.
 
 ```elixir
 def some_function(nil) do
@@ -310,7 +315,7 @@ end
 
 ## Naming
 
-* Use `snake_case` for atoms, functions and variables.
+* Use `snake_case` for atoms, functions, and variables.
 
 ```elixir
 # not preferred
@@ -372,6 +377,10 @@ def cool?(var) do
   # checks if var is cool
 end
 ```
+
+* Function parameters that are not used in production code should still have
+  descriptive names. To avoid warning messages, begin the name with an underscore
+  (e.g., `_foo`). Note that these parameters can still be used in traces, etc.
 
 ## Comments
 
@@ -479,7 +488,7 @@ defmodule SomeModule do
 end
 ```
 
- * Use `@moduledoc` false if you do not intend on documenting the module.
+ * Use `@moduledoc false` if you do not intend to document the module.
 
 ```elixir
 defmodule SomeModule do
@@ -510,7 +519,7 @@ defmodule SomeModule do
 end
 ```
 
- * Use heredocs with markdown for documentation.
+ * Use heredocs with Markdown for documentation.
 
 ```elixir
 # not preferred
